@@ -6,9 +6,9 @@ site:
   language: zh-CN
   # set the /<rootPath> pathname under which your site is served
   # for GitHub pages deployment without a custom domain, it is often '/<projectName>'
-  # root-path: /gitsite
+  root-path: /yourdailyshells.com
   # set cdn prefix: self hosted
-  cdn-path: /static
+  cdn-path: static
   navigation:
     - title: Makefile教程
       uri: /books/makefile/index.html
