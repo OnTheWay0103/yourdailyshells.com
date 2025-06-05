@@ -37,10 +37,10 @@ site:
     display-git-link: false
     # any custom styles used in theme:
     # code-font: Monaco
-  # integration:
-  #   comment:
-  #     provider: oauth
-  #     url: https://api.liaoxuefeng.com
+  integration:
+    comment:
+      provider: oauth
+      url: https://api.ontheway.com
   #   analytics:
   #     provider: baidu
   #     id: "2efddd14a5f2b304677462d06fb4f964"
