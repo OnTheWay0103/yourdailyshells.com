@@ -1,6 +1,6 @@
 # CC BY-NC-SA 4.0 License
 
-[廖雪峰的官方网站](https://liaoxuefeng.com)所有内容由[廖雪峰](https://liaoxuefeng.com)创作，并以CC BY-NC-SA 4.0协议发布在[GitHub](https://github.com/michaelliao/liaoxuefeng.com)。
+[在路上](https://ontheway0103.github.io/yourdailyshells.com)所有内容由[在路上](https://ontheway0103.github.io/yourdailyshells.com)创作，并以 CC BY-NC-SA 4.0 协议发布在[GitHub](https://github.com/ontheway0103/yourdailyshells.com)。
 
 <svg width="150px" height="30px" viewBox="0 0 150 30" xmlns="http://www.w3.org/2000/svg">
     <path xmlns="http://www.w3.org/2000/svg"
@@ -49,16 +49,10 @@
 
 不提供担保。许可协议可能不会给与您意图使用的所必须的所有许可。例如，其他权利比如形象权、隐私权或人格权[^publicity_privacy_etc]可能限制您如何使用作品。
 
-[^appropriate_credit]: **适当的署名** — 如果已提供，您必须提供创作者和署名者的姓名或名称、版权标识、许可协议标识、免责标识和作品链接。先于4.0版本的CC许可协议也要求您在已经提供的情况下提供作品的名称，可能还有其他轻微差别。
-
-[^indicate_changes]: **标明是否（对原始作品）作了修改** — 根据4.0协议，您必须说明，如果您修改作品和保留以前修改的说明，您必须明确说明。根据3.0协议和更早的协议版本，您仅需在创作演绎作品时，做出修改说明。
-
+[^appropriate_credit]: **适当的署名** — 如果已提供，您必须提供创作者和署名者的姓名或名称、版权标识、许可协议标识、免责标识和作品链接。先于 4.0 版本的 CC 许可协议也要求您在已经提供的情况下提供作品的名称，可能还有其他轻微差别。
+[^indicate_changes]: **标明是否（对原始作品）作了修改** — 根据 4.0 协议，您必须说明，如果您修改作品和保留以前修改的说明，您必须明确说明。根据 3.0 协议和更早的协议版本，您仅需在创作演绎作品时，做出修改说明。
 [^commercial_purposes]: **商业目的** — 商业性使用是指主要目的为获得商业优势或金钱回报。
-
 [^same_license]: **与原先许可协议相同的许可协议** — 您还可以使用[https://creativecommons.org/compatiblelicenses](https://creativecommons.org/compatiblelicenses)列出的兼容许可证。
-
-[^technological_measures]: **技术措施** — 该协议禁止使用世界知识产权组织版权公约第11条定义的有效技术措施。
-
-[^exception_limitation]: **例外或限制** — 根据法律的例外和限制性规定，使用者拥有的权利，例如，合理使用（和公平交易），不受CC许可协议的影响。
-
+[^technological_measures]: **技术措施** — 该协议禁止使用世界知识产权组织版权公约第 11 条定义的有效技术措施。
+[^exception_limitation]: **例外或限制** — 根据法律的例外和限制性规定，使用者拥有的权利，例如，合理使用（和公平交易），不受 CC 许可协议的影响。
 [^publicity_privacy_etc]: **形象权、隐私权或人格权** — 在按照您的需要使用该作品前，您可能需要得到更多许可。
