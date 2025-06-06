@@ -89,4 +89,4 @@ const resp = await fetch(`${window.location.pathname}/blogs/all/index.json`);
 
 ## 联系我
 
-![我的微信二维码](./my_qrcode.png)
+![我的微信二维码](../../../static/cover/my_qrcode.png)
