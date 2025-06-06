@@ -25,7 +25,7 @@
 
 <script>
     documentReady(async ()=>{
-        const resp = await fetch('./blogs/all/index.json');
+        const resp = await fetch('./blogs/tech/index.json');
         let blogs = await resp.json();
         if (blogs.length > 20) {
             blogs = blogs.slice(0, 20);
