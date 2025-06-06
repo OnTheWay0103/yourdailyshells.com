@@ -7,7 +7,7 @@
     <div class="home-book-list-item">
         <a href="/books/makefile/index.html" class="home-book-list-image">
             <div>
-                <img src="/static/cover/makefile.jpg" />
+                <img src="./static/cover/makefile.jpg" />
             </div>
             <div class="home-book-list-title">
                 Makefile教程
@@ -25,7 +25,7 @@
 
 <script>
     documentReady(async ()=>{
-        const resp = await fetch('/blogs/all/index.json');
+        const resp = await fetch('./blogs/all/index.json');
         let blogs = await resp.json();
         if (blogs.length > 20) {
             blogs = blogs.slice(0, 20);
