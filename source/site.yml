@@ -10,10 +10,10 @@ site:
   # set cdn prefix: self hosted
   cdn-path: /yourdailyshells.com/static
   navigation:
-    - title: Makefile教程
-      uri: /books/makefile/index.html
-    - title: 最新
-      uri: /blogs/all/index.html
+    - title: Markdown教程(廖雪峰)
+      uri: /books/gitsite-guide/index.html
+    # - title: 最新
+    #   uri: /blogs/all/index.html
     - title: 技术
       uri: /blogs/tech/index.html
     - title: 格局打开

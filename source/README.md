@@ -5,15 +5,15 @@
 <div class="home-book-list">
     <!-- makefile -->
     <div class="home-book-list-item">
-        <a href="/books/makefile/index.html" class="home-book-list-image">
+        <a href="./books/gitsite-guide/index.html" class="home-book-list-image">
             <div>
                 <img src="./static/cover/makefile.jpg" />
             </div>
             <div class="home-book-list-title">
-                Makefile教程
+                MarkDown教程
             </div>
             <div class="home-book-list-desc">
-                入门Linux开发，从零开始编写Makefile！
+                入门Markdown，从零开始,不要看我说的是什么，看我写的是什么！
             </div>
         </a>
     </div>
@@ -25,7 +25,7 @@
 
 <script>
     documentReady(async ()=>{
-        const resp = await fetch('./blogs/tech/index.json');
+        const resp = await fetch('./blogs/How2MakeMoney/index.json');
         let blogs = await resp.json();
         if (blogs.length > 20) {
             blogs = blogs.slice(0, 20);
@@ -36,7 +36,7 @@
             return `
 <div class="home-blog-list-item">
     <div><span class="text-sm font-semibold uppercase">${date}</span></div>
-    <div><a href="${blog.uri}">${gitsite.encodeHtml(blog.title)}</a></div>
+    <div><a href=".${blog.uri}">${gitsite.encodeHtml(blog.title)}</a></div>
 </div>`;
         });
         document.getElementById('home-blog-list').innerHTML = items.join('');
