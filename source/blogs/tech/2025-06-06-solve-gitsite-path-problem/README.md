@@ -89,4 +89,6 @@ const resp = await fetch(`${window.location.pathname}/blogs/all/index.json`);
 
 ## 联系我
 
-![我的微信二维码](../../../static/cover/my_qrcode.png)
+<img src="../../../static/cover/my_qrcode.png" style="max-width: 30%; min-width: 10%; height: auto; object-fit: cover; border-radius: 8px;">
+
+<!-- ![我的微信二维码](../../../static/cover/my_qrcode.png){width=20% height=50px} -->
