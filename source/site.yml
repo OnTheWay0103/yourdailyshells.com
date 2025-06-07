@@ -10,7 +10,7 @@ site:
   # set cdn prefix: self hosted
   cdn-path: /yourdailyshells.com/static
   navigation:
-    - title: [(格局打开,星辰大海)]
+    - title: [(格局打开, 星辰大海)]
       uri: /blogs/How2MakeMoney/index.html
     - title: [(技术问题，不请自来)]
       uri: /blogs/tech/index.html
@@ -40,9 +40,10 @@ site:
     comment:
       provider: oauth
       url: https://api.ontheway.com
-  #   analytics:
-  #     provider: baidu
-  #     id: "2efddd14a5f2b304677462d06fb4f964"
+    analytics:
+      provider: google
+      gtag: G-VCRE4EQFFY
+
   footer: |
     <div>
       &copy;<a href="/">ontheway.com</a> 
