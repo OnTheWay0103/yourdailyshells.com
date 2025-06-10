@@ -86,9 +86,3 @@ const resp = await fetch(`${window.location.pathname}/blogs/all/index.json`);
 2. 不要被表面现象迷惑
 3. 有时候最简单的解决方案就是最好的
 4. 相对路径是一个通用的最佳实践
-
-## 联系我
-
-<img src="../../../static/cover/my_qrcode.png" style="max-width: 30%; min-width: 10%; height: auto; object-fit: cover; border-radius: 8px;">
-
-<!-- ![我的微信二维码](../../../static/cover/my_qrcode.png){width=20% height=50px} -->

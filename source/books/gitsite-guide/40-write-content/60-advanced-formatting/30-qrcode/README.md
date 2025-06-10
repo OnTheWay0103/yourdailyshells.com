@@ -1,4 +1,4 @@
-# QRCode
+# QRCode - Text2QrCode
 
 To create a QRCode, add text inside a fenced code block with the `qrcode` identifier.
 

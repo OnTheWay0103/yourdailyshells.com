@@ -58,8 +58,6 @@ graph TD
 
 3. 站内内容优化
    - TDK :title（15%权重，所有页面的标题结尾都加上网站名称）, description, keywords
-   - 网页结构：一级标题，二级标题，三级标题，正文，图片 h1,h2,h3,p,<img alt /img>
+   - 网页结构：一级标题，二级标题，三级标题，正文，图片 h1,h2,h3,p, <img alt /img>
 
-## 联系我
 
-![我的微信二维码](../../../static/cover/my_qrcode.png)

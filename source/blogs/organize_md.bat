@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:: 这个程序有BUG,直接用 sh 格式的命令吧
 :: 获取当前日期，格式为YYYY-MM-DD
 for /f "tokens=2-4 delims=/ " %%a in ('date /t') do (
     set mm=%%a
