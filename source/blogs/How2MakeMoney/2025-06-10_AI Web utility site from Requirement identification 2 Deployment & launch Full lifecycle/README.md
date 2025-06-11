@@ -41,7 +41,7 @@
 1. 选 keywords 关键词，并判断出是否可以做（需要经验积累与一些感觉判断），尽量找新词
 2. 使用 模板直接发布 网站 （可以在 github 上找模板或者在 vercel.com 上找模板）可以先随意找几个模板试一下流程
 3. 在 vercel.com 选好模板，deploy,然后关联 vercel 和 github 的账号（如已关联，跳过关联步骤）
-4. 在 https://supabase.com 创建数据库
+4. 在 https://supabase.com 创建免费数据库
 5. 在 https://www.astria.ai 创建密钥
 6. 部署成功后，再上线域名等，修改 DNS 等
 7. 网站优化和推广
