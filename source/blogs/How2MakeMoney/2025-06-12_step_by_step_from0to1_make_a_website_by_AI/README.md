@@ -14,14 +14,24 @@
 
 ## 上站实践：
 
-1. 选 keywords 关键词，并判断出是否可以做（需要经验积累与一些感觉判断），尽量找新词
+1. 找到一个图片类网站，https://www.profilepicture.ai/， 从它下手，先分析一下它的关键词 
 
-   - 找关键词
-     ![keywords by google planer](./keywords.png)
-   - 查看关键词趋势
-     ![keyword trends](./keywords_trends.png)
-   - 关键词相关
-     ![keyword relative](./keywords_relative.png)
+  - 用keywords planer查网站关键词
+
+   ![查网站关键词](./getKeywords.png)
+   ![下载关键词，用于分析，月搜大于5W,竞争难度中低，难度小于50的](./downloadKeywords.png)
+   ![查看趋势](./keywords_trends2.png)
+
+  - 选 keywords 关键词，并判断出是否可以做（需要经验积累与一些感觉判断），尽量找新词
+
+    - 找关键词
+      ![keywords by google planer](./keywords.png)
+    - 查看关键词趋势
+      ![keyword trends1](./keywords_trends.png)
+    - 关键词相关
+      ![keyword relative](./keywords_relative.png)
+
+  - 分析结果，没分析出什么来， 直接仿制 profilepicture.ai 吧
 
 2. 使用模板直接发布网站（可以在 github 上找模板或者在 vercel.com 上找模板）可以先随意找几个模板试一下流程
 3. 在 vercel.com 选好模板，deploy,然后关联 vercel 和 github 的账号（如已关联，跳过关联步骤）
@@ -40,3 +50,4 @@
     - Google Search Console (这个工具需要查一下)
     - Google Analytics
     - 注册的账号密码要牢记
+
