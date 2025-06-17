@@ -31,7 +31,7 @@
 3. 使用关键词工具调研，找到值得做的需求(./利用关键词工具...找到值得做的需求.md)
 4. 实现需求 - 使用模板或者 AI 协助开发：
    - 使用 https://vercel.com 练习上站
-   - https://supabase.com (DB)
+   - https://supabase.com (DB) github 账号授权登录
    - https://www.astria.ai (API KEY)
 5. 网站优化和推广 （发外链）（可以用 ahrefs 工具查看竞品的发外链目标地）- 如何发外链？
 6. 重复 1~5 步骤

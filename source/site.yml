@@ -38,8 +38,41 @@ site:
     # code-font: Monaco
   integration:
     comment:
-      provider: oauth
-      url: https://api.ontheway.com
+      provider: waline
+      # Waline 服务端地址
+      serverURL: https://blogs-db-comments-git-main-zhaoq0103s-projects.vercel.app
+      # 数据库配置
+      database:
+        type: supabase
+        # Supabase配置
+        supabase:
+          url: ${SUPABASE_URL}
+          key: ${SUPABASE_KEY}
+          password: ${SUPABASE_PASSWORD}
+      # 评论系统配置
+      options:
+        # 评论框占位符
+        placeholder: 说点什么吧...
+        # 评论框高度
+        height: 300
+        # 是否启用暗黑模式
+        dark: auto
+        # 表情包配置
+        emoji:
+          - https://unpkg.com/@waline/emojis@1.1.0/weibo
+          - https://unpkg.com/@waline/emojis@1.1.0/bilibili
+        # 是否启用登录
+        login: enable
+        # 是否启用评论通知
+        notification: true
+        # 安全配置
+        security:
+          # 是否启用IP限制
+          ipLimit: true
+          # 是否启用敏感词过滤
+          wordLimit: true
+          # 是否启用JWT加密
+          jwt: true
     analytics:
       provider: google
       gtag: G-VCRE4EQFFY

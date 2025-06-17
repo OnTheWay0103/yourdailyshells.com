@@ -1,0 +1,66 @@
+<!-- waline comment -->
+{% if site.integration.comment.serverURL %}
+<!-- 引入样式 -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+
+<!-- 评论容器 -->
+<div id="comment-thread">
+  <div class="comment-loading" style="display:none">Loading...</div>
+  <div class="comment-info-loaded" style="display:none">
+    <span class="comment-signin-state" style="display:none">
+      Signed in as <span class="comment-user-name"></span>
+      <a href="#0" onclick="gitsite_comment.signout()">Sign out</a>
+    </span>
+    <span class="comment-signout-state" style="display:none">
+      <a href="#0" onclick="gitsite_comment.signin()">Sign in</a> to comment
+    </span>
+  </div>
+  <div class="comment-info-failed" style="display:none">
+    Failed to load comments. Please try again later.
+  </div>
+  <div class="comment-topics"></div>
+  <div id="waline"></div>
+</div>
+
+<!-- 初始化脚本 -->
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  init({
+    el: "#waline",
+    serverURL: "{{ site.integration.comment.serverURL }}",
+    path: location.pathname,
+    dark: "{{ site.integration.comment.options.dark | default: 'auto' }}",
+    placeholder: "{{ site.integration.comment.options.placeholder | default: '说点什么吧...' }}",
+    emoji: {{ site.integration.comment.options.emoji | default: '[]' | jsonify }},
+    login: "{{ site.integration.comment.options.login | default: 'enable' }}",
+    notification: {{ site.integration.comment.options.notification | default: true }},
+    wordLimit: {{ site.integration.comment.options.security.wordLimit | default: true }},
+    ipLimit: {{ site.integration.comment.options.security.ipLimit | default: true }},
+    jwt: {{ site.integration.comment.options.security.jwt | default: true }}
+  });
+</script>
+
+<style>
+  /* 保持原有样式 */
+  #comment-thread {
+    margin-top: 2rem;
+  }
+  
+  .comment-loading,
+  .comment-info-loaded,
+  .comment-info-failed {
+    margin-bottom: 1rem;
+  }
+  
+  /* Waline样式调整 */
+  .waline-container {
+    margin-top: 1rem;
+  }
+</style>
+{% else %}
+<!-- ERROR: missing config: site.integration.comment.serverURL -->
+{% endif %}
+<!--// waline comment --> 
