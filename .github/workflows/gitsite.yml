@@ -42,7 +42,7 @@ jobs:
           node-version: 20
       - name: Install GitSite
         run:
-          npm install gitsite-cli -g
+          npm install gitsite-cli@1.0.42 -g
       - name: Build with GitSite
         run:
           # set output dir to '_site' for pages jobs:
