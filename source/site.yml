@@ -40,7 +40,7 @@ site:
     comment:
       provider: waline
       # Waline 服务端地址
-      serverURL: https://blogs-db-comments-git-main-zhaoq0103s-projects.vercel.app
+      serverURL: https://blogs-db-comments.vercel.app/
       # 数据库配置
       database:
         type: supabase
