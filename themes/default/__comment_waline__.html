@@ -32,14 +32,14 @@
     el: "#waline",
     serverURL: "{{ site.integration.comment.serverURL }}",
     path: location.pathname,
-    dark: "{{ site.integration.comment.options.dark | default: 'auto' }}",
-    placeholder: "{{ site.integration.comment.options.placeholder | default: '说点什么吧...' }}",
-    emoji: {{ site.integration.comment.options.emoji | default: '[]' | jsonify }},
-    login: "{{ site.integration.comment.options.login | default: 'enable' }}",
-    notification: {{ site.integration.comment.options.notification | default: true }},
-    wordLimit: {{ site.integration.comment.options.security.wordLimit | default: true }},
-    ipLimit: {{ site.integration.comment.options.security.ipLimit | default: true }},
-    jwt: {{ site.integration.comment.options.security.jwt | default: true }}
+    dark: "{% if site.integration.comment.options.dark %}{{ site.integration.comment.options.dark }}{% else %}auto{% endif %}",
+    placeholder: "{% if site.integration.comment.options.placeholder %}{{ site.integration.comment.options.placeholder }}{% else %}说点什么吧...{% endif %}",
+    emoji: {% if site.integration.comment.options.emoji %}{{ site.integration.comment.options.emoji | jsonify }}{% else %}[]{% endif %},
+    login: "{% if site.integration.comment.options.login %}{{ site.integration.comment.options.login }}{% else %}enable{% endif %}",
+    notification: {% if site.integration.comment.options.notification %}{{ site.integration.comment.options.notification }}{% else %}true{% endif %},
+    wordLimit: {% if site.integration.comment.options.security.wordLimit %}{{ site.integration.comment.options.security.wordLimit }}{% else %}true{% endif %},
+    ipLimit: {% if site.integration.comment.options.security.ipLimit %}{{ site.integration.comment.options.security.ipLimit }}{% else %}true{% endif %},
+    jwt: {% if site.integration.comment.options.security.jwt %}{{ site.integration.comment.options.security.jwt }}{% else %}true{% endif %}
   });
 </script>
 
