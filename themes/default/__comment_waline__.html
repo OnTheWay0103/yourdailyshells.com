@@ -28,13 +28,17 @@
 <!-- 初始化脚本 -->
 <script type="module">
   import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  
+  // 处理emoji配置
+  const emojiConfig = {% if site.integration.comment.options.emoji %}{{ site.integration.comment.options.emoji }}{% else %}[]{% endif %};
+  
   init({
     el: "#waline",
     serverURL: "{{ site.integration.comment.serverURL }}",
     path: location.pathname,
     dark: "{% if site.integration.comment.options.dark %}{{ site.integration.comment.options.dark }}{% else %}auto{% endif %}",
     placeholder: "{% if site.integration.comment.options.placeholder %}{{ site.integration.comment.options.placeholder }}{% else %}说点什么吧...{% endif %}",
-    emoji: {% if site.integration.comment.options.emoji %}{{ site.integration.comment.options.emoji | jsonify }}{% else %}[]{% endif %},
+    emoji: emojiConfig,
     login: "{% if site.integration.comment.options.login %}{{ site.integration.comment.options.login }}{% else %}enable{% endif %}",
     notification: {% if site.integration.comment.options.notification %}{{ site.integration.comment.options.notification }}{% else %}true{% endif %},
     wordLimit: {% if site.integration.comment.options.security.wordLimit %}{{ site.integration.comment.options.security.wordLimit }}{% else %}true{% endif %},
