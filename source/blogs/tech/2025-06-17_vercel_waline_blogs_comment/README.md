@@ -21,83 +21,38 @@ Waline 是一款轻量级、开源的现代化评论系统，专为静态网站�
 ### 灵活部署
 
 - 支持 Vercel/Netlify 等无服务器平台，以及 Docker 独立部署
-- 兼容 Supabase、MongoDB、MySQL 等主流数据库
+- 兼容 LeanCloud、Supabase、MongoDB、MySQL 等主流数据库
 
 ### 开源免费
 
 - 采用 GPL-2.0 许可证
 - 无商用限制
 
-## 二、快速部署教程（Vercel + Supabase）
+## 二、快速部署教程（Vercel + LeanCloud）
 
-### Step 1：创建数据库（Supabase）
+### Step 1：创建数据库（LeanCloud）
 
-1. 注册 [Supabase](https://supabase.com/)
-2. 创建新项目：
+1. 注册 [LeanCloud](https://leancloud.app/)
+2. 创建新应用：
 
-   - 点击"New Project"
-   - 输入项目名称（如：`yourdailyshells-waline`）
-   - 设置数据库密码
-   - 选择地区（建议选择离用户最近的区域）
-   - 点击"Create new project"
+   - 点击"创建应用"
+   - 输入应用名称（如：`yourdailyshells-waline`）
+   - 选择开发版（免费）
+   - 点击"创建"
 
-3. 获取数据库配置：
+3. 获取应用配置：
 
-   - 进入项目
-   - 点击"Settings" -> "Database"
+   - 进入应用控制台
+   - 点击"设置" -> "应用 Keys"
    - 记录以下信息：
-     - Project URL
-     - Project API Key (anon public)
-     - Database Password
+     - App ID
+     - App Key
+     - Master Key
 
-4. 初始化数据库表：
-   - 进入 SQL 编辑器
-   - 执行以下 SQL 创建必要的表：
-
-```sql
--- 创建评论表
-CREATE TABLE IF NOT EXISTS "comments" (
-  "id" SERIAL PRIMARY KEY,
-  "user_id" VARCHAR(255),
-  "comment" TEXT,
-  "ip" VARCHAR(255),
-  "ua" VARCHAR(255),
-  "created_at" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  "updated_at" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  "pid" INTEGER,
-  "rid" INTEGER,
-  "status" VARCHAR(255) DEFAULT 'approved',
-  "link" VARCHAR(255),
-  "mail" VARCHAR(255),
-  "nick" VARCHAR(255)
-);
-
--- 创建用户表
-CREATE TABLE IF NOT EXISTS "users" (
-  "id" SERIAL PRIMARY KEY,
-  "display_name" VARCHAR(255),
-  "email" VARCHAR(255),
-  "password" VARCHAR(255),
-  "type" VARCHAR(255),
-  "created_at" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  "updated_at" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
--- 创建计数器表
-CREATE TABLE IF NOT EXISTS "counters" (
-  "id" SERIAL PRIMARY KEY,
-  "time" INTEGER,
-  "reaction0" INTEGER DEFAULT 0,
-  "reaction1" INTEGER DEFAULT 0,
-  "reaction2" INTEGER DEFAULT 0,
-  "reaction3" INTEGER DEFAULT 0,
-  "reaction4" INTEGER DEFAULT 0,
-  "reaction5" INTEGER DEFAULT 0,
-  "reaction6" INTEGER DEFAULT 0,
-  "reaction7" INTEGER DEFAULT 0,
-  "reaction8" INTEGER DEFAULT 0
-);
-```
+4. 配置安全域名：
+   - 点击"设置" -> "安全中心"
+   - 在"Web 安全域名"中添加你的网站域名
+   - 在"服务器安全域名"中添加 Vercel 域名（如：`*.vercel.app`）
 
 ### Step 2：部署服务端（Vercel）
 
@@ -108,9 +63,9 @@ CREATE TABLE IF NOT EXISTS "counters" (
 
 2. 配置环境变量：
    - 进入项目 Settings → Environment Variables，添加以下变量：
-     - `SUPABASE_URL` → 填入 Supabase 的 Project URL
-     - `SUPABASE_KEY` → 填入 Project API Key
-     - `SUPABASE_PASSWORD` → 填入 Database Password
+     - `LEAN_ID` → 填入 LeanCloud 的 App ID
+     - `LEAN_KEY` → 填入 App Key
+     - `LEAN_MASTER_KEY` → 填入 Master Key
    - 返回 Deployments → 重新部署（Redeploy）使配置生效
 
 ### Step 3：集成到网站（客户端）
@@ -165,25 +120,25 @@ CREATE TABLE IF NOT EXISTS "counters" (
 
 ### 数据库管理
 
-- Supabase 免费版提供：
-  - 500MB 数据库
-  - 1GB 文件存储
-  - 50MB 数据库备份
-  - 2GB 带宽
+- LeanCloud 免费版提供：
+  - 3GB 存储空间
+  - 30GB 流量/月
+  - 30,000 次 API 调用/天
+  - 支持云引擎、云函数等高级功能
 - 建议：定期监控使用情况，必要时升级付费版
 
 ### 安全加固
 
 - 启用 `JWT_TOKEN` 环境变量加密数据传输
-- 配置 Supabase 的 Row Level Security (RLS) 策略
+- 在 LeanCloud 控制台配置安全域名
 - 定期备份数据库
 
 ## 总结
 
-Waline 以"轻量易用 + 功能完备"成为静态网站评论系统的优选。通过 Vercel + Supabase 组合可实现快速部署，尤其适合个人博客与技术文档。Supabase 提供更强大的数据库功能和更好的国际化支持，是评论系统的理想选择。
+Waline 以"轻量易用 + 功能完备"成为静态网站评论系统的优选。通过 Vercel + LeanCloud 组合可实现快速部署，尤其适合个人博客与技术文档。LeanCloud 作为国内云服务提供商，提供稳定的数据库服务和良好的本地化支持，是评论系统的理想选择。
 
 ## 扩展资源
 
 - [官方文档](https://waline.js.org/guide/get-started/)
 - [主题适配](https://waline.js.org/guide/client/integration.html)
-- [Supabase 文档](https://supabase.com/docs)
+- [LeanCloud 文档](https://leancloud.app/docs/)
