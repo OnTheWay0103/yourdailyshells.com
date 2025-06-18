@@ -1,5 +1,5 @@
 site:
-  title: [(在路上的官方网站)]
+  title: 在路上的官方网站
   description: 在路上的官方网站 (ontheway.com) 分享技术、生活和思考
   keywords: 在路上, ontheway, 技术, 生活, 思考, 博客, 写作
   theme: default
@@ -10,11 +10,11 @@ site:
   # set cdn prefix: self hosted
   cdn-path: /yourdailyshells.com/static
   navigation:
-    - title: [(格局打开, 星辰大海)]
+    - title: 格局打开
       uri: /blogs/How2MakeMoney/index.html
-    - title: [(技术问题，不请自来)]
+    - title: 开发相关
       uri: /blogs/tech/index.html
-    - title: [(Markdown教程)]
+    - title: Markdown教程
       uri: /books/gitsite-guide/index.html
 
   git:
