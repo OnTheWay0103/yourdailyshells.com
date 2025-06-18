@@ -43,12 +43,12 @@ site:
       serverURL: https://blogs-db-comments.vercel.app/
       # 数据库配置
       database:
-        type: supabase
-        # Supabase配置
-        supabase:
-          url: ${SUPABASE_URL}
-          key: ${SUPABASE_KEY}
-          password: ${SUPABASE_PASSWORD}
+        type: leancloud
+        # LeanCloud配置
+        leancloud:
+          appId: ${LEAN_ID}
+          appKey: ${LEAN_KEY}
+          masterKey: ${LEAN_MASTER_KEY}
       # 评论系统配置
       options:
         # 评论框占位符

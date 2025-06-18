@@ -29,6 +29,11 @@
 <script type="module">
   import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
   
+  // 调试信息
+  console.log('Waline初始化开始');
+  console.log('当前路径:', location.pathname);
+  console.log('服务端地址:', "{{ site.integration.comment.serverURL }}");
+  
   init({
     el: "#waline",
     serverURL: "{{ site.integration.comment.serverURL }}",
@@ -40,7 +45,13 @@
     notification: {% if site.integration.comment.options.notification %}{{ site.integration.comment.options.notification }}{% else %}true{% endif %},
     wordLimit: {% if site.integration.comment.options.security.wordLimit %}{{ site.integration.comment.options.security.wordLimit }}{% else %}true{% endif %},
     ipLimit: {% if site.integration.comment.options.security.ipLimit %}{{ site.integration.comment.options.security.ipLimit }}{% else %}true{% endif %},
-    jwt: {% if site.integration.comment.options.security.jwt %}{{ site.integration.comment.options.security.jwt }}{% else %}true{% endif %}
+    jwt: {% if site.integration.comment.options.security.jwt %}{{ site.integration.comment.options.security.jwt }}{% else %}true{% endif %},
+    // 添加更多调试选项
+    debug: true
+  }).then(() => {
+    console.log('Waline初始化成功');
+  }).catch((error) => {
+    console.error('Waline初始化失败:', error);
   });
 </script>
 
