@@ -69,8 +69,8 @@ site:
         security:
           # 是否启用IP限制
           ipLimit: true
-          # 是否启用敏感词过滤
-          wordLimit: true
+          # 评论字数限制（数字表示最大字数，false表示不限制）
+          wordLimit: 1000
           # 是否启用JWT加密
           jwt: true
     analytics:
