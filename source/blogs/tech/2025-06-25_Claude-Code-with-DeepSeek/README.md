@@ -9,27 +9,27 @@
 **原理**：`claude-bridge` 作为本地代理，将 Claude Code 的请求转为 DeepSeek 兼容的 OpenAI 格式。  
 
 #### 配置步骤：
-1. **安装 Claude Code**（需 Node.js ≥ 18）：  
+1. **安装 Claude Code**（需 Node.js ≥ 18）：
    ```bash
    npm install -g @anthropic-ai/claude-code
    ```
 
-2. **安装 claude-bridge**：  
+2. **安装 claude-bridge**：
    ```bash
    npm install -g @mariozechner/claude-bridge
    ```
 
-3. **设置环境变量**（替换为你的 DeepSeek API Key）：  
+3. **设置环境变量**（替换为你的 DeepSeek API Key）：
    ```bash
    export OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
    ```
 
-4. **启动代理服务**：  
+4. **启动代理服务**：
    ```bash
    claude-bridge openai deepseek-chat --baseURL https://api.deepseek.com/v1
    ```
 
-5. **运行 Claude Code**：  
+5. **运行 Claude Code**：
    ```bash
    claude  # 此时请求实际由 DeepSeek 处理
    ```  
@@ -58,12 +58,12 @@
          api_key: os.environ/DEEPSEEK_API_KEY  # 替换为你的Key
    ```
 
-3. **启动代理服务**：  
+3.**启动代理服务**：  
    ```bash
    litellm -c config.yaml --detailed_debug
    ```
 
-4. **设置 Claude Code 环境变量**：  
+4.**设置 Claude Code 环境变量**：  
    ```bash
    export ANTHROPIC_BASE_URL=http://localhost:4000  # LiteLLM 默认端口
    export ANTHROPIC_MODEL=deepseek-reasoner
