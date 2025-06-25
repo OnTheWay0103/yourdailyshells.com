@@ -151,4 +151,11 @@
 | **长上下文处理**   | ❌                   | ⭐⭐⭐⭐ (需配置Gemini)  | ⭐⭐⭐⭐ (支持Qwen)    |
 | **适合人群**       | 快速尝鲜开发者       | 多模型需求团队        | 国内深度使用者       |
 
-> 初次尝试建议从 **方案一（claude-bridge）** 入门，追求灵活选 **方案三（Router）**，企业级部署用 **方案二（LiteLLM）**。所有工具均开源，代码见 [claude-bridge](https://github.com/badlogic/claude-bridge) / [LiteLLM](https://github.com/BerriAI/litellm) / [Claude Code Router](https://github.com/musistudio/claude-code-router)。
+> 初次尝试建议从 
+**方案一（claude-bridge）**入门，追求灵活选 
+**方案二（LiteLLM）**
+**方案三（Router）**，企业级部署用 
+**所有工具均开源，代码见:
+[claude-bridge](https://github.com/badlogic/claude-bridge) 
+[LiteLLM](https://github.com/BerriAI/litellm) 
+[Claude Code Router](https://github.com/musistudio/claude-code-router)。
