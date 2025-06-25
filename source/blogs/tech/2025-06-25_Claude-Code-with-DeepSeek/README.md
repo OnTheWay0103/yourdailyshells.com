@@ -116,10 +116,11 @@
    ```  
 
 **动态切换模型**（终端内操作）：  
-```bash
-/model deepseek,deepseek-reasoner  # 切换到高性能模型
-/model deepseek,deepseek-chat       # 切换到经济模型
-```[citation:4]
+   ```bash
+   /model deepseek,deepseek-reasoner  # 切换到高性能模型
+   /model deepseek,deepseek-chat       # 切换到经济模型
+   ```
+
 
 > ✅ **优点**：中文文档完善，支持混合路由（如 DeepSeek + Qwen 长文本）。  
 > ❌ **局限**：仅限 Node.js 环境。
@@ -151,14 +152,14 @@
 | **长上下文处理**   | ❌                   | ⭐⭐⭐⭐ (需配置Gemini)  | ⭐⭐⭐⭐ (支持Qwen)    |
 | **适合人群**       | 快速尝鲜开发者       | 多模型需求团队        | 国内深度使用者       |
 
-**所有工具均开源，代码见:
-[claude-bridge](https://github.com/badlogic/claude-bridge) 
-[LiteLLM](https://github.com/BerriAI/litellm) 
+**所有工具均开源，代码见**
+[claude-bridge](https://github.com/badlogic/claude-bridge) |
+[LiteLLM](https://github.com/BerriAI/litellm) |
 [Claude Code Router](https://github.com/musistudio/claude-code-router)
 
 > 初次尝试建议从 
 **方案一（claude-bridge）**入门，追求灵活选 
-**方案二（LiteLLM）**适合团队
+**方案二（LiteLLM）**多模型需求团队 
 **方案三（Router）**企业级部署用 
 
 
