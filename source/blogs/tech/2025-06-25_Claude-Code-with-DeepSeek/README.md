@@ -9,27 +9,27 @@
 **原理**：`claude-bridge` 作为本地代理，将 Claude Code 的请求转为 DeepSeek 兼容的 OpenAI 格式。  
 
 #### 配置步骤：
-1. **安装 Claude Code**（需 Node.js ≥ 18）：
+1.**安装 Claude Code**（需 Node.js ≥ 18）：
    ```bash
    npm install -g @anthropic-ai/claude-code
    ```
 
-2. **安装 claude-bridge**：
+2.**安装 claude-bridge**：
    ```bash
    npm install -g @mariozechner/claude-bridge
    ```
 
-3. **设置环境变量**（替换为你的 DeepSeek API Key）：
+3.**设置环境变量**（替换为你的 DeepSeek API Key）：
    ```bash
    export OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
    ```
 
-4. **启动代理服务**：
+4.**启动代理服务**：
    ```bash
    claude-bridge openai deepseek-chat --baseURL https://api.deepseek.com/v1
    ```
 
-5. **运行 Claude Code**：
+5.**运行 Claude Code**：
    ```bash
    claude  # 此时请求实际由 DeepSeek 处理
    ```  
@@ -44,12 +44,12 @@
 **特点**：可同时接入 DeepSeek、Gemini、OpenAI 等模型，按任务类型自动分流请求。  
 
 #### 配置步骤：
-1. **安装 LiteLLM**：  
+1.**安装 LiteLLM**：  
    ```bash
    pip install 'litellm[proxy]'
    ```
 
-2. **创建配置文件 `config.yaml`**：  
+2.**创建配置文件 `config.yaml`**：  
    ```yaml
    model_list:
      - model_name: deepseek-reasoner
@@ -84,12 +84,12 @@
 **特点**：专为国内开发者优化，预置 DeepSeek 路由规则，支持动态模型切换。  
 
 #### 配置步骤：
-1. **安装 Claude Code Router**：  
+1.**安装 Claude Code Router**：  
    ```bash
    npm install -g @musistudio/claude-code-router
    ```
 
-2. **编辑配置文件 `~/.claude-code-router/config.json`**：  
+2.**编辑配置文件 `~/.claude-code-router/config.json`**：  
    ```json
    {
      "OPENAI_API_KEY": "sk-xxxxxxxx",  // DeepSeek API Key
@@ -110,7 +110,7 @@
    }
    ```
 
-3. **启动服务**：  
+3.**启动服务**：  
    ```bash
    ccr code  # 替代原版 claude 命令
    ```  
@@ -128,16 +128,16 @@
 ---
 
 ### ⚠️ 关键注意事项：
-1. **API 成本控制**：  
+1.**API 成本控制**：  
    - DeepSeek 当前定价 ≈ $0.001/千 tokens，比 Claude 低 90%+  
    - 在 `config.json` 中设置 `max_tokens` 和 `rate_limit` 防超额[citation:4]。
 
-2. **模型能力适配**：  
+2.**模型能力适配**：  
    - **代码生成**：优先选 `deepseek-reasoner`（128K 上下文）  
    - **简单问答**：用 `deepseek-chat` 降低成本  
    - **超长文本**（>128K）：需搭配 Gemini 或 Qwen[citation:4]。
 
-3. **安全建议**：  
+3.**安全建议**：  
    - 切勿泄露 API Key，环境变量优先于硬编码  
    - 首次使用建议关闭 `Auto-Approve`，确认操作权限[citation:6]。
 
@@ -158,8 +158,8 @@
 [Claude Code Router](https://github.com/musistudio/claude-code-router)
 
 > 初次尝试建议从 
-**方案一（claude-bridge）**入门，追求灵活选 
-**方案二（LiteLLM）**多模型需求团队 
-**方案三（Router）**企业级部署用 
+**方案一（claude-bridge）**入门，追求灵活选   
+**方案二（LiteLLM）**多模型需求团队   
+**方案三（Router）**企业级部署用   
 
 
