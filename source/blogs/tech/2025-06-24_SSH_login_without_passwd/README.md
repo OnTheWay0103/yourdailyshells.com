@@ -154,7 +154,6 @@ Authenticated to server_ip ([server_ip]:22) using "publickey"
    # 备份密钥
    cp ~/.ssh/id_ed25519_server* ~/secure_backup/
    ```
-
 2. **网络加固**
    ```ini
    # /etc/ssh/sshd_config
@@ -163,7 +162,6 @@ Authenticated to server_ip ([server_ip]:22) using "publickey"
    MaxStartups 3
    AllowUsers ubuntu@your_trusted_ip
    ```
-
 3. **监控与审计**
    ```bash
    # 查看SSH登录日志
@@ -172,7 +170,6 @@ Authenticated to server_ip ([server_ip]:22) using "publickey"
    # 检查异常登录
    last -f /var/log/wtmp
    ```
-
 4. **两步验证（可选）**
    ```bash
    # 安装Google Authenticator
