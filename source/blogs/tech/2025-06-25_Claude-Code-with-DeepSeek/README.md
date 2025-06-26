@@ -13,22 +13,18 @@
    ```bash
    npm install -g @anthropic-ai/claude-code
    ```
-
 2.**安装 claude-bridge**：
    ```bash
    npm install -g @mariozechner/claude-bridge
    ```
-
 3.**设置环境变量**（替换为你的 DeepSeek API Key）：
    ```bash
    export OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
    ```
-
 4.**启动代理服务**：
    ```bash
    claude-bridge openai deepseek-chat --baseURL https://api.deepseek.com/v1
    ```
-
 5.**运行 Claude Code**：
    ```bash
    claude  # 此时请求实际由 DeepSeek 处理

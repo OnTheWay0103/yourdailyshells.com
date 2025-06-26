@@ -9,38 +9,28 @@
 步骤如下：
 
 1. 启动 ssh-agent（在 Git Bash 中运行以下命令）：
-
-```bash
-eval "$(ssh-agent -s)"
-```
-
-这条命令会启动 ssh-agent 并设置必要的环境变量，使得当前 Shell 可以与它通信。
-
+   ```bash
+   eval "$(ssh-agent -s)"
+   ```
+   这条命令会启动 ssh-agent 并设置必要的环境变量，使得当前 Shell 可以与它通信。
 2. 添加你的 SSH 私钥（通常是 id_rsa）：
+   ```bash
+   ssh-add ~/.ssh/id_rsa
+   ```
+   如果你使用的是默认的 SSH 密钥对（即 id_rsa 和 id_rsa.pub），就可以用上面的命令。
 
-```bash
-ssh-add ~/.ssh/id_rsa
-```
-
-如果你使用的是默认的 SSH 密钥对（即 id_rsa 和 id_rsa.pub），就可以用上面的命令。
-
-如果你使用了其他名称的密钥文件，比如 my_key，那么命令应该是：
-
-```bash
-ssh-add ~/.ssh/my_key
-```
-
+   如果你使用了其他名称的密钥文件，比如 my_key，那么命令应该是：
+   ```bash
+   ssh-add ~/.ssh/my_key
+   ```
 3. 验证是否添加成功：
-
-```bash
-ssh-add -l
-```
-
-如果成功，你会看到类似这样的输出，显示已加载的 SSH 公钥指纹：
-
-```
-2048 SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx your_email@example.com (RSA)
-```
+   ```bash
+   ssh-add -l
+   ```
+   如果成功，你会看到类似这样的输出，显示已加载的 SSH 公钥指纹：
+   ```
+   2048 SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx your_email@example.com (RSA)
+   ```
 
 ### 二、（可选）让 ssh-agent 在每次打开 Git Bash 时自动启动
 
