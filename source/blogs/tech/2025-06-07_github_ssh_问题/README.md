@@ -18,7 +18,6 @@
    ssh-add ~/.ssh/id_rsa
    ```
    如果你使用的是默认的 SSH 密钥对（即 id_rsa 和 id_rsa.pub），就可以用上面的命令。
-
    如果你使用了其他名称的密钥文件，比如 my_key，那么命令应该是：
    ```bash
    ssh-add ~/.ssh/my_key
@@ -39,35 +38,26 @@
 步骤如下：
 
 1. 打开 `~/.bashrc` 文件（如果不存在可以创建）：
-
-```bash
-nano ~/.bashrc
-```
-
-或者使用其他编辑器如 vim 或 notepad（在 Git Bash 中）：
-
-```bash
-notepad ~/.bashrc
-```
-
+   ```bash
+   nano ~/.bashrc
+   ```
+   或者使用其他编辑器如 vim 或 notepad（在 Git Bash 中）：
+   ```bash
+   notepad ~/.bashrc
+   ```
 2. 在文件末尾添加以下内容：
-
-```bash
-# 启动 ssh-agent
-if [ -z "$SSH_AUTH_SOCK" ]; then
-  eval "$(ssh-agent -s)"
-fi
-```
-
+   ```bash
+   # 启动 ssh-agent
+   if [ -z "$SSH_AUTH_SOCK" ]; then
+     eval "$(ssh-agent -s)"
+   fi
+   ```
 3. 保存文件并退出编辑器。
-
 4. 让配置生效：
-
-```bash
-source ~/.bashrc
-```
-
-这样，每次你打开 Git Bash 时，ssh-agent 就会自动启动，你就不需要手动执行 `eval "$(ssh-agent -s)"` 了。
+   ```bash
+   source ~/.bashrc
+   ```
+   这样，每次你打开 Git Bash 时，ssh-agent 就会自动启动，你就不需要手动执行 `eval "$(ssh-agent -s)"` 了。
 
 ### 三、总结
 
