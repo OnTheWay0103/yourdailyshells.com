@@ -4,7 +4,7 @@
 
 本指南旨在帮助初级和中级前端开发者使用 Next.js 14、TypeScript、Tailwind CSS、Framer Motion、Zustand、Radix UI、Headless UI 以及 Fabric.js + Canvas API 进行开发。我们将从环境搭建开始，逐步介绍各个技术栈的使用方法，并提供一个完整的示例项目供练习。
 
-[项目源码](git@github.com:OnTheWay0103/frontend_dev_guide.git)
+[项目源码](https://github.com/OnTheWay0103/frontend_dev_guide)
 
 ## 🚀 环境搭建
 
