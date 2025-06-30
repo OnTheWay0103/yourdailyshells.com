@@ -390,3 +390,7 @@ _site_*/
 !source/**/*.zip
 !.gitignore
 !.gitsubmodules
+
+
+# user input file
+userinput.py 
