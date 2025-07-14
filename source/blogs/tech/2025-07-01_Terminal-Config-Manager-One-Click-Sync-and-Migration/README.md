@@ -75,8 +75,7 @@ export NVM_DIR="$HOME/.nvm"
 ```
 
 **步骤 3：管理系统级配置**
-```zsh
-# /etc/zprofile 追加
+```zsh #/etc/zprofile 追加，使默认使用GNU命令
 if [ -d /usr/local/opt/coreutils ]; then
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
