@@ -1,0 +1,132 @@
+todo list
+
+1. https://github.com/sjzar/chatlog 微信聊天记录管理
+2. https://github.com/mathiasbynens/dotfiles 命令行配置文件管理，参考它把TerminalConfigMgr做的更好一些
+3. 通过AI实现自动跟踪最新的AI大模型 
+4. 自动爬虫工具+AI分析总结， 提交获取信息的效率
+5. 查询专业的PC端语音输入方案：Shure MV7
+6. todesk类似的工具 -- https://github.com/rustdesk/rustdesk
+7. 开发一门课程， AI零基础编程，给自己开发小工具，从公域找付费对象，主要是面对非程序员群体 - todo
+8. 面外海外程序员使用的小工具，如unixtimestamp, jsonview, urlencode等 -- 可以增加博客，引入最新的技术动态文章
+9. 电商独立站
+10. 照片批量识别 -- 家长批量找到照片中自己的孩子
+11. 语言学习APP -- 可以参考腾讯元宝的扫码下载，不需要提交应用市场
+12. 任何网页上出现的例表，都有单独保存和批量下载保存的需求 - 需要浏览器插件
+13. 搜索一下 关键词 keyword，看看有什么工具可以提高效率 - 重要，出海网站效率
+14. 自由职业 - 小产权房交易，只需要录视频（单人+两人）
+15. 如何把飞书和金山中一些开发的优秀文档聚合起来？ - 咨询一下AI
+16. https://www.smashorpass.ai/  可以参考这个网做一个歌单网站，
+17. 字数统计的需求 - ？ https://www.eteste.com/
+18. 图片拼接合成一张 - ？
+19. 
+
+
+
+
+
+
+# 工具站的开发流程
+## 发现和
+挖掘需求
+	1. 对于一些可以带来流量的网站，如v2ex， 可以从网站的出站流量，找出哪些网站是新网站，可以作为对标分析学习
+		在谷歌用“site:来源域名 bairbie”语法搜索，并且点开搜索工具，限定结果时间为7月17日到7月25日，目的是找出最早的宣传网页
+		直接搜索 site:pikabu.ru intitle:BaiRBIE 找不到结果，而搜索 site:pikabu.ru BaiRBIE 可以找到结果
+
+	google alerts
+	google trends
+	新兴趋势发现平台 (如 Exploding Topics, Glimpse)
+	
+	
+	AI协助分析用户需求：
+	“魔法指令”模板：
+	“你是一位顶尖的市场研究员。请分析以下来自网络社区的讨论文本，并严格按照JSON格式，仅输出结果：
+	{"main_topic": "[用1-3个词总结核心主题]","user_pain_points": ["[提炼出的第一个用户痛点]", "[提炼出的第二个用户痛点]"],"seo_opportunities": ["[转化成的第一个潜在长尾关键词]"]}
+	文本如下：[此处由n8n自动插入抓取到的文本]”
+	
+	根据用户的搜索词来挖掘需求： 词根 + a~z 自动分析
+	也有一些拓词工具（google keyword planner)
+
+	"housewarming gift" "ideas for" site:reddit.com
+	"how to" "best way to" site:reddit.com
+### 一些高频的工具搜索词汇
+#### 如何找词 - ？
+	1. google搜索词的拓展下载保存工具 - todo
+	2. 高频词根 50个 - 把50个词根都分析一下，找到手感，然后再想办法工具化 
+	3. 关注社交媒体（可用借助AI的能力）
+	4. 部分关键词示例：
+		时间戳、时间戳转换、ip地址查询、ip查询、ip、时间戳转换器、在线工具、整数分区、视频地址解析、
+		下载地址转换、整数分区计算器、unix时间戳、timestamp、unixtimestamp、在线拆字
+		AI phonenumber generator
+		AI Emoji Generator
+		coloring pages - 做示例
+		draggan ai - 这个示例是什么
+		white background
+		mothers day -- 每个节假日都布局？AI来了，这样还有没有意义？还有很多很多很多没有用过AI的人。。
+		cute wallpapers
+		wordle today  - 是一个在线猜词游戏，后来有了很多变种
+		near me - 我附近的xx， 有点像高德地图
+		recent - 最近的xx : games,movies, books , 可以使用A-Za-z方法拓词
+		letter cover : 图片需求，图片也要符合SEO,设置好alt和title， desc
+#### 如何分析词 - ？
+	1. 把搜索到的相同组的关键词发给AI，来分析用户搜索意图，并了解如何提供服务来满足这个需求等 
+	2. 从中找到有价值的小词，然后图谋做大
+	3. 
+	
+	4.可以按搜索量排序（要W以上才值得做，可以先设定一个600+的小标准），按竞争难度排序（难度不超过50，最好40以下），按网页价值CPC排序，都有参考意义
+		kdroi= volumn * cpc / kd  kdroi越高越值得做
+	10. 附录：
+		ahrefs 可以查优化难度
+		AI生成内容： 泛娱乐类流量没钱途，要做精准流量。
+## 开发
+	对开发一个系统，前期要有一个大致的规划，有哪些功能，需要有边界，后期再根据需要迭代，
+	前期的规划很重要，可以节省时间，节省精力，不跑偏
+	域名解析用cloudflare, 网站部署用vercel.com
+	刘小排的《5分钟做个网站，人人都能学会》更是提供了实用方法论：先用bolt.new做原型，再用cursor精雕细琢。
+		核心prompt（一个优质落地页应该包含的模块）：
+		1. 技术栈：纯HTML + TailwindCSS （或者：NextJs + TailwindCSS）
+		2. 功能实现：（根据具体需求定制算法逻辑）示例
+			 我要做一个运势网站，用户填入自己的姓名、选择生日，点击按钮，就可以就行运势计算。运势计算具体算法我不管，你帮我完成，但是要算出来让用户感觉专业、有理有据、愿意付费。 计算出来的运势至少要包括运势评级、运势分数、宜、忌、理由等等。
+		3. 页面结构：(完整的header、hero、testimonials、faq、features、pricing、how it works、footer模块) 示例：
+			 要有完整的header,hero, testinoials, faq, features, pricing, how it works ,footer 区域。网站的版权所有人是xxx，联系方式xxx，其他内容需要编写得专业、真实。
+		4. 内容要求：专业、真实的文案内容
+			  所有网站上的文案内容，要求你使用英文。关于这个运势计算网站，你需要强调我们是结合东方玄学、紫微斗数、易经、星座等等，强调中西方结合。
+		5. 设计风格：
+			 网站配色和风格需要现代化、高级，类似于苹果官网的风格。网站需要自适应各种屏幕尺寸。
+### SEO
+	1. SEO权重指数：主域名>子域名>子目录>内页
+	2. 增加谷歌统计代码
+	3. 提交到谷歌Search Console后台:
+	4. Google Search Console(一般搜索引擎都会提供站长后台，让站长提交自己的网站，需要做站点地图sitemap.xml)
+
+	单域名单站做单关键词的策略：SEO的基本原则（整理一下）
+	首页添加所有内页的链接，然后每一个内页都要指向首页。指向首页的话，你需要用关键字去指向首页，比如说你某一个页面的关键字是IP查询，那么你在那个页面增加一个到首页的链接，一个a标签的链接，链接上面的开头以及链接里面的文字，你就用IP查询，这样权重就到了首页。
+	<a href="首页网址" title="关键字描述">关键字</a>
+
+	制作了一个页面，然后按照层级结构完善页面，并让搜索引擎收录。在此基础上，如果我能获得流量，回过头来开发一个工具
+	用首页对付内页的方法做网站
+	标准的落地页结构
+	落地页→功能→支付的开发流程
+		- 个页面专注一个核心关键词
+		- 保持800-1200词的内容长度
+		- 关键词密度控制在3%-5%
+		- 确保内容与关键词高度相关
+
+	原来AI里面的信息，比如元宝，是爬取公众号文章来的，在公众号里留下联系方式，然后被AI抓取 - 这里面有个大市场
+## 宣传推广 - 是否可以自动发贴？
+	1.可以在V2EX发帖子宣传（这个好像是个中文网站）
+	2.Indie Hackers ： https://www.indiehackers.com/
+	3.ProductHunt ：https://www.producthunt.com/
+	4.YC HackerNews : https://news.ycombinator.com/
+	5.Reddit : https://www.reddit.com/
+	6.Twitter : x.com
+	7.Fackbook : https://facebook.com
+## 收款渠道
+	creem收款：
+	https://mp.weixin.qq.com/s/V3KFdngsCnSybIWfRnd-lQ
+# 独立站是否也可以用这个思路（找一个商品关键词工具），然后做独立站外贸
+
+
+
+
+
+
