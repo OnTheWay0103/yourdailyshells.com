@@ -2,7 +2,7 @@ todo list
 
 1. https://github.com/sjzar/chatlog 微信聊天记录管理
 2. https://github.com/mathiasbynens/dotfiles 命令行配置文件管理，参考它把TerminalConfigMgr做的更好一些
-3. 通过AI实现自动跟踪最新的AI大模型 
+3. 通过AI实现自动跟踪最新的AI大模型  - 没有验证成功
 4. 自动爬虫工具+AI分析总结， 提交获取信息的效率
 5. 查询专业的PC端语音输入方案：Shure MV7
 6. todesk类似的工具 -- https://github.com/rustdesk/rustdesk
@@ -29,6 +29,8 @@ todo list
 ### 高频搜索词汇的爬取分析工具
 #### 如何找词 - ？
 	1.根据用户的搜索词来挖掘需求 - google搜索词的拓展下载保存工具 - 词根 + a~z 自动分析 -- todo
+		每个输入词都会自动在前后增加很多修饰语， 太多了，找不完，所以，这个找出来要怎么用？
+
 	2. 高频词根 50个 - 把50个词根都分析一下，找到手感，然后再想办法工具化 
 	3. 关注社交媒体（可用借助AI的能力）
 		google alerts
@@ -83,7 +85,7 @@ todo list
 		2. 功能实现：（根据具体需求定制算法逻辑）示例
 			 我要做一个运势网站，用户填入自己的姓名、选择生日，点击按钮，就可以就行运势计算。运势计算具体算法我不管，你帮我完成，但是要算出来让用户感觉专业、有理有据、愿意付费。 计算出来的运势至少要包括运势评级、运势分数、宜、忌、理由等等。
 		3. 页面结构：(完整的header、hero、testimonials、faq、features、pricing、how it works、footer模块) 示例：
-			 要有完整的header,hero, testinoials, faq, features, pricing, how it works ,footer 区域。网站的版权所有人是xxx，联系方式xxx，其他内容需要编写得专业、真实。
+			 要有完整的header,hero, testimonials, faq, features, pricing, how it works ,footer 区域。网站的版权所有人是xxx，联系方式xxx，其他内容需要编写得专业、真实。
 		4. 内容要求：专业、真实的文案内容
 			  所有网站上的文案内容，要求你使用英文。关于这个运势计算网站，你需要强调我们是结合东方玄学、紫微斗数、易经、星座等等，强调中西方结合。
 		5. 设计风格：
@@ -117,6 +119,11 @@ todo list
 
 
 
+不少图像类的网站，print是个好关键词
+print
+printable
 
+coloring pages
+coloring book
 
 
