@@ -14,6 +14,10 @@ site:
       uri: /blogs/How2MakeMoney/index.html
     - title: 开发相关
       uri: /blogs/tech/index.html
+    - title: 经济学摘要
+      uri: /books/economics-summary/index.html
+    - title: 经济学全文
+      uri: /books/economics-full/index.html
     - title: Markdown教程
       uri: /books/gitsite-guide/index.html
 
