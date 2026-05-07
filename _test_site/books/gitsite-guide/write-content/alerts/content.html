@@ -1,0 +1,192 @@
+<!-- book content -->
+<div id="gsi-chapter">
+    <div id="gsi-chapter-title">
+        <h1>Alerts</h1>
+    </div>
+    <div id="gsi-chapter-content">
+        <p><img src="https://avatars.githubusercontent.com/u/470058?s=48&v=4" class="gsc-avatar">  <a href="https://github.com/michaelliao" target="_blank">Crypto Michael</a></p>
+<p>Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information. On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.</p>
+<p>Use alerts only when they are crucial for user success and limit them to one or two per article to prevent overloading the reader. Additionally, you should avoid placing alerts consecutively.</p>
+<p>To add an alert, add text inside a fenced code block with the <code>alert type=note</code> identifier. This is <strong>different</strong> from GitHub which uses a special blockquote line to specify the alert type. Five types of alerts are available:</p>
+<pre><code>```alert type=note
+Useful information that users should know, even when skimming content.
+```
+
+```alert type=tip
+Helpful advice for doing things better or more easily.
+```
+
+```alert type=important
+Key information users need to know to achieve their goal.
+```
+
+```alert type=warning
+Urgent info that needs *immediate* user attention to avoid problems.
+```
+
+```alert type=caution
+Advises about **risks** or negative outcomes of certain actions.
+```
+</code></pre>
+<div class="alert alert-note">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" /></svg> Note<span></span></p>
+<p>Useful information that users should know, even when skimming content.
+</p></div>
+<div class="alert alert-tip">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg> Tip<span></span></p>
+<p>Helpful advice for doing things better or more easily.
+</p></div>
+<div class="alert alert-important">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.25-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z" /></svg> Important<span></span></p>
+<p>Key information users need to know to achieve their goal.
+</p></div>
+<div class="alert alert-warning">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" /></svg> Warning<span></span></p>
+<p>Urgent info that needs <em>immediate</em> user attention to avoid problems.
+</p></div>
+<div class="alert alert-caution">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" /></svg> Caution<span></span></p>
+<p>Advises about <strong>risks</strong> or negative outcomes of certain actions.
+</p></div>
+<p>To specify the alert title, use <code>title=Xyz</code>:</p>
+<pre><code>```alert type=caution title=Error
+There is an ERROR!
+```
+</code></pre>
+<div class="alert alert-caution">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" /></svg> Error<span></span></p>
+<p>There is an ERROR!
+</p></div>
+<p>Title that contains spaces must be quoted with <code>&quot;</code>:</p>
+<pre><code>```alert type=tip title=&quot;Useful Tips&quot;
+Helpful advice for doing things better or more easily.
+```
+</code></pre>
+<div class="alert alert-tip">
+<p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg> Useful Tips<span></span></p>
+<p>Helpful advice for doing things better or more easily.
+</p></div>
+<p>Share to:
+    <a href="#0"><svg viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M5.90944 13.7676C7.18903 13.7764 8.45762 13.5308 9.64152 13.0452C10.8254 12.5596 11.901 11.8436 12.8058 10.9387C13.7107 10.0339 14.4267 8.95831 14.9123 7.77442C15.398 6.59052 15.6435 5.32193 15.6347 4.04234C15.6347 3.89424 15.6318 3.74692 15.6251 3.6004C16.294 3.11637 16.8714 2.51704 17.3301 1.83048C16.7065 2.10711 16.0448 2.28853 15.3673 2.36867C16.081 1.9415 16.6151 1.26951 16.8702 0.47784C16.1993 0.875917 15.4653 1.15658 14.7 1.30773C14.1847 0.759649 13.5031 0.396688 12.7607 0.275024C12.0184 0.153359 11.2566 0.279775 10.5933 0.634706C9.93003 0.989637 9.40223 1.55329 9.09159 2.23844C8.78095 2.92358 8.7048 3.69201 8.87492 4.4248C7.51583 4.35687 6.18622 4.00382 4.97245 3.38858C3.75868 2.77334 2.6879 1.90967 1.82965 0.853666C1.39239 1.60611 1.2584 2.49693 1.45497 3.3447C1.65154 4.19248 2.16388 4.93344 2.88765 5.41668C2.34485 5.40017 1.81395 5.25358 1.33958 4.98925C1.3388 5.00353 1.3388 5.01782 1.3388 5.03287C1.33896 5.82207 1.61213 6.58691 2.11194 7.19765C2.61176 7.8084 3.30746 8.22744 4.08103 8.38371C3.57776 8.52103 3.0497 8.5411 2.53745 8.4424C2.75578 9.12162 3.18095 9.7156 3.75349 10.1413C4.32603 10.5669 5.01731 10.803 5.73063 10.8164C4.51983 11.7668 3.02454 12.2822 1.48533 12.2798C1.21283 12.2799 0.940561 12.264 0.669922 12.2322C2.23287 13.2363 4.05177 13.7693 5.90944 13.7676Z"></path></svg></a>
+    <a href="#0"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M19.375 10.06a9.383 9.383 0 0 1-7.907 9.257V12.77h2.185l.408-2.71h-2.593V8.3a1.356 1.356 0 0 1 1.521-1.468h1.2V4.53a14.7 14.7 0 0 0-2.1-.182 3.31 3.31 0 0 0-3.547 3.643v2.068h-2.38v2.71h2.38v6.546a9.374 9.374 0 1 1 10.843-9.257z"></path></svg></a>
+    <a href="#0"><svg viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M16.5257 0.95613L0.992894 6.94483C-0.066948 7.37023 -0.061323 7.96196 0.800144 8.22551L4.78605 9.46968L14.0138 3.64787C14.4499 3.3832 14.8494 3.52537 14.5213 3.81704L7.04397 10.5643L7.12095 10.6987L7.04397 10.5649L6.76974 14.675C6.92584 14.6731 7.07947 14.6358 7.21913 14.566C7.35878 14.4963 7.48083 14.3958 7.57613 14.2721L9.51318 12.389L13.5423 15.3662C14.2841 15.7748 14.8191 15.5629 15.004 14.6773L17.6491 2.21212C17.9199 1.12644 17.2349 0.634171 16.5258 0.956163"></path></svg></a>
+</p>
+    </div>
+
+
+
+
+
+
+    <hr class="gsc-border">
+    <div id="gsi-chapter-prev-next" class="flex flex-row mt-4">
+        <div id="gsi-chapter-prev" class="basis-1/2 mr-2 text-left">
+
+            <a href="/yourdailyshells.com/books/gitsite-guide/write-content/code-blocks/index.html"
+                onclick="gs_load_chapter('/books/gitsite-guide/write-content/code-blocks/index.html',true);return false;"
+                class="inline-block my-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>
+                Code Blocks
+            </a>
+
+        </div>
+        <div id="gsi-chapter-next" class="basis-1/2 ml-2 text-right">
+
+            <a href="/yourdailyshells.com/books/gitsite-guide/write-content/videos/index.html"
+                onclick="gs_load_chapter('/books/gitsite-guide/write-content/videos/index.html',true);return false;"
+                class="inline-block my-2">
+                Videos
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                </svg>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- waline comment -->
+
+<!-- 引入样式 -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+
+<!-- 评论容器 -->
+<div id="comment-thread">
+  <div class="comment-loading" style="display:none">Loading...</div>
+  <div class="comment-info-loaded" style="display:none">
+    <span class="comment-signin-state" style="display:none">
+      Signed in as <span class="comment-user-name"></span>
+      <a href="#0" onclick="gitsite_comment.signout()">Sign out</a>
+    </span>
+    <span class="comment-signout-state" style="display:none">
+      <a href="#0" onclick="gitsite_comment.signin()">Sign in</a> to comment
+    </span>
+  </div>
+  <div class="comment-info-failed" style="display:none">
+    Failed to load comments. Please try again later.
+  </div>
+  <div class="comment-topics"></div>
+  <div id="waline"></div>
+</div>
+
+<!-- 初始化脚本 -->
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  
+  // 调试信息
+  console.log('Waline初始化开始');
+  console.log('当前路径:', location.pathname);
+  console.log('服务端地址:', "https://blogs-db-comments.vercel.app/");
+  
+  init({
+    el: "#waline",
+    serverURL: "https://blogs-db-comments.vercel.app/",
+    path: location.pathname,
+    dark: "auto",
+    placeholder: "说点什么吧...",
+    emoji: ["https://unpkg.com/@waline/emojis@1.1.0/weibo", "https://unpkg.com/@waline/emojis@1.1.0/bilibili"],
+    login: "enable",
+    notification: true,
+    wordLimit: 1000,
+    ipLimit: true,
+    jwt: true,
+    // 添加更多调试选项
+    debug: true
+  }).then(() => {
+    console.log('Waline初始化成功');
+  }).catch((error) => {
+    console.error('Waline初始化失败:', error);
+  });
+</script>
+
+<style>
+  /* 保持原有样式 */
+  #comment-thread {
+    margin-top: 2rem;
+  }
+  
+  .comment-loading,
+  .comment-info-loaded,
+  .comment-info-failed {
+    margin-bottom: 1rem;
+  }
+  
+  /* Waline样式调整 */
+  .waline-container {
+    margin-top: 1rem;
+  }
+</style>
+
+<!--// waline comment --> 
+
+<!--// book content -->

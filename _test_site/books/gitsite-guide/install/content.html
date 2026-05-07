@@ -1,0 +1,257 @@
+<!-- book content -->
+<div id="gsi-chapter">
+    <div id="gsi-chapter-title">
+        <h1>Install and Deploy</h1>
+    </div>
+    <div id="gsi-chapter-content">
+        <p><img src="https://avatars.githubusercontent.com/u/470058?s=48&v=4" class="gsc-avatar">  <a href="https://github.com/michaelliao" target="_blank">Crypto Michael</a></p>
+<h2>Install GitSite command line tool</h2>
+<p>Use <code>npm</code> to install GitSite command line tool:</p>
+<pre class="hljs"><code class="language-bash">$ npm install -g gitsite-cli
+</code></pre>
+<p>Use the following command to update the latest version:</p>
+<pre class="hljs"><code class="language-bash">$ npm update -g gitsite-cli
+</code></pre>
+<h2>Setup a new site</h2>
+<p>First create an empty directory which will be used as your site's root directory and also a git repo. Let's name it as <code>awesome</code>:</p>
+<pre class="hljs"><code class="language-bash">$ <span class="hljs-built_in">mkdir</span> awesome
+</code></pre>
+<p>Run <code>gitsite-cli init</code> under the <code>awesome</code> directory:</p>
+<pre class="hljs"><code class="language-bash">$ <span class="hljs-built_in">cd</span> awesome
+$ gitsite-cli init
+</code></pre>
+<p>The GitSite command line tool does the following job to initialize your new site:</p>
+<ol>
+<li>Check if current directory is an empty directory;</li>
+<li>Download sample site from GitHub;</li>
+<li>Unzip the sample site.</li>
+</ol>
+<p>Now you can find the following files and directories under your <code>awesome</code> directory:</p>
+<pre class="ascii"><code>awesome/
+├── themes/       &lt;-- all themes
+│   └── default/  &lt;-- a theme named 'default'
+│
+└── source/       &lt;-- contains all markdown docs
+    │
+    ├── books/            &lt;-- all books
+    │   ├── user-guide/   &lt;-- a book
+    │   │   ├── book.yml  &lt;-- book name, author and description
+    │   │   ├── 10-introduction/  &lt;-- chapter order and short name
+    │   │   │   ├── README.md     &lt;-- chapter content
+    │   │   │   └── test.png      &lt;-- static resources used in the chapter
+    │   │   ├── 20-installation/  &lt;-- chapter
+    │   │   │   ├── README.md
+    │   │   │   ├── 10-create-repo/  &lt;-- sub chapter
+    │   │   │   │   └── README.md
+    │   │   │   ├── 20-workflow/     &lt;-- sub chapter
+    │   │   │   │   └── README.md
+    │   │   │   └── 30-deploy/       &lt;-- sub chapter
+    │   │   │       └── README.md
+    │   │   └── ...  &lt;-- more chapters
+    │   └── ...  &lt;-- more books
+    │
+    ├── blogs/     &lt;-- all blogs
+    │   ├── tech/  &lt;-- tag
+    │   │   ├── 2024-01-01-hello/  &lt;-- blog date and short name
+    │   │   │   ├── README.md      &lt;-- blog content
+    │   │   │   └── hello.jpg      &lt;-- static resources used in the blog
+    │   │   └── ...                &lt;-- more blogs
+    │   └── ... &lt;-- more tags
+    │
+    ├── pages/             &lt;-- all pages
+    │   ├── license/       &lt;-- about page
+    │   │   └── README.md  &lt;-- page content
+    │   └── ...            &lt;-- more pages
+    │
+    ├── 404.md       &lt;-- display as 404 page if not found
+    ├── README.md    &lt;-- display as home page
+    ├── favicon.ico  &lt;-- favorite icon
+    ├── site.yml     &lt;-- site config
+    └── static/      &lt;-- static resources
+        ├── custom.css
+        ├── logo.png
+        └── ...
+</code></pre>
+<h2>Preview site on local</h2>
+<p>Run <code>gitesite-cli serve</code> to start a local HTTP server to serve the site:</p>
+<pre class="hljs"><code class="language-bash">$ gitsite-cli serve
+</code></pre>
+<p>Then you can visit your site on <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>:</p>
+<p><img src="home.png" alt="Home page" loading="lazy"></p>
+<h2>Update site settings</h2>
+<p>The site settings are stored in <code>source/site.yml</code>. You should update the settings:</p>
+<ul>
+<li>Set your site's name, description, etc;</li>
+<li>Set your site's navigation menus;</li>
+<li>Set your Disqus, Google analytics ID, or just remove it.</li>
+</ul>
+<h2>Deploy to GitHub page</h2>
+<p>To deploy site to GitHub page, first create a repo on GitHub and push your local files to the remote.</p>
+<p>To enable GitHub page, go to repo - Settings - Pages - Build and deployment: select <code>GitHub Actions</code>.</p>
+<p>Make a new push to trigger the Action for deployment.</p>
+<p>The workflow script file is <code>.github/workflows/gitsite.yml</code>. Check the sample <a href="https://github.com/michaelliao/gitsite/blob/main/.github/workflows/gitsite.yml" target="_blank">gitsite.yml</a>.</p>
+<p>You must set the <code>root-path: /&lt;rootPath&gt;</code> under which your site is served for GitHub pages deployment without custom domain, it is often <code>/&lt;projectName&gt;</code>:</p>
+<pre class="hljs"><code class="language-text">site:
+  # set when your site is served for GitHub pages without custom domain:
+  root-path: /gitsite
+</code></pre>
+<p>Check the sample <a href="https://github.com/michaelliao/gitsite/blob/main/source/site.yml" target="_blank">site.yml</a>.</p>
+<h2>Deploy to GitLab page</h2>
+<p>It is similar to deploy site to GitLab, and GitLab requires a <code>.gitlab-ci.yml</code> script.</p>
+<p>Please make sure the submodule function is enabled by: Project - Settings - CI/CD - Variables - Add variable:</p>
+<p>Key: <code>GIT_SUBMODULE_STRATEGY</code></p>
+<p>Value: <code>recursive</code></p>
+<p><img src="ci-cd-vars.png" alt="Variables" loading="lazy"></p>
+<p>Check the sample <a href="https://gitlab.com/cryptomichael/gitsite/-/blob/main/.gitlab-ci.yml?ref_type=heads" target="_blank">.gitlab-ci.yml</a>.</p>
+<h2>Deploy to CloudFlare page</h2>
+<p>To deploy site to CloudFlare page, create application from GitHub repo, then open application settings - <code>Builds &amp; deployments</code> - <code>Build configurations</code> - <code>Edit configurations</code>:</p>
+<ul>
+<li>Framework preset: None</li>
+<li>Build command: <code>npm install gitsite-cli -g &amp;&amp; gitsite-cli build -o _site -v</code></li>
+<li>Build output directory: <code>/_site</code></li>
+<li>Root directory: leave empty.</li>
+</ul>
+<h2>Deploy to Vercel</h2>
+<p>To deploy site to Vercel, create a new project by import GitHub repo, then configure project:</p>
+<ul>
+<li>Framework Preset: Other</li>
+<li>Root Direction: <code>./</code></li>
+</ul>
+<p>Build and Output Settings:</p>
+<ul>
+<li>Build Command: <code>npm install -g gitsite-cli &amp;&amp; gitsite-cli build -o dist -v</code></li>
+<li>Output Directory: <code>dist</code></li>
+<li>Install Command: leave empty.</li>
+</ul>
+<h2>Deploy to Self-hosted Nginx</h2>
+<p>GitSite generates pure HTML files by command <code>gitsite-cli build</code>. You can specify the output directory (default to <code>dist</code>) by <code>--output</code> or <code>-o</code>:</p>
+<pre class="hljs"><code class="language-bash">$ gitsite-cli build -o dist -v
+</code></pre>
+<p>You can run Nginx by Docker quickly:</p>
+<pre class="hljs"><code class="language-bash">$ docker run --<span class="hljs-built_in">rm</span> -p 8000:80 -v /path/to/dist:/usr/share/nginx/html nginx:latest
+</code></pre>
+<p>Site is served and can be previewed at <code>http://localhost:8000</code>.</p>
+<p>Share to:
+    <a href="#0"><svg viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M5.90944 13.7676C7.18903 13.7764 8.45762 13.5308 9.64152 13.0452C10.8254 12.5596 11.901 11.8436 12.8058 10.9387C13.7107 10.0339 14.4267 8.95831 14.9123 7.77442C15.398 6.59052 15.6435 5.32193 15.6347 4.04234C15.6347 3.89424 15.6318 3.74692 15.6251 3.6004C16.294 3.11637 16.8714 2.51704 17.3301 1.83048C16.7065 2.10711 16.0448 2.28853 15.3673 2.36867C16.081 1.9415 16.6151 1.26951 16.8702 0.47784C16.1993 0.875917 15.4653 1.15658 14.7 1.30773C14.1847 0.759649 13.5031 0.396688 12.7607 0.275024C12.0184 0.153359 11.2566 0.279775 10.5933 0.634706C9.93003 0.989637 9.40223 1.55329 9.09159 2.23844C8.78095 2.92358 8.7048 3.69201 8.87492 4.4248C7.51583 4.35687 6.18622 4.00382 4.97245 3.38858C3.75868 2.77334 2.6879 1.90967 1.82965 0.853666C1.39239 1.60611 1.2584 2.49693 1.45497 3.3447C1.65154 4.19248 2.16388 4.93344 2.88765 5.41668C2.34485 5.40017 1.81395 5.25358 1.33958 4.98925C1.3388 5.00353 1.3388 5.01782 1.3388 5.03287C1.33896 5.82207 1.61213 6.58691 2.11194 7.19765C2.61176 7.8084 3.30746 8.22744 4.08103 8.38371C3.57776 8.52103 3.0497 8.5411 2.53745 8.4424C2.75578 9.12162 3.18095 9.7156 3.75349 10.1413C4.32603 10.5669 5.01731 10.803 5.73063 10.8164C4.51983 11.7668 3.02454 12.2822 1.48533 12.2798C1.21283 12.2799 0.940561 12.264 0.669922 12.2322C2.23287 13.2363 4.05177 13.7693 5.90944 13.7676Z"></path></svg></a>
+    <a href="#0"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M19.375 10.06a9.383 9.383 0 0 1-7.907 9.257V12.77h2.185l.408-2.71h-2.593V8.3a1.356 1.356 0 0 1 1.521-1.468h1.2V4.53a14.7 14.7 0 0 0-2.1-.182 3.31 3.31 0 0 0-3.547 3.643v2.068h-2.38v2.71h2.38v6.546a9.374 9.374 0 1 1 10.843-9.257z"></path></svg></a>
+    <a href="#0"><svg viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M16.5257 0.95613L0.992894 6.94483C-0.066948 7.37023 -0.061323 7.96196 0.800144 8.22551L4.78605 9.46968L14.0138 3.64787C14.4499 3.3832 14.8494 3.52537 14.5213 3.81704L7.04397 10.5643L7.12095 10.6987L7.04397 10.5649L6.76974 14.675C6.92584 14.6731 7.07947 14.6358 7.21913 14.566C7.35878 14.4963 7.48083 14.3958 7.57613 14.2721L9.51318 12.389L13.5423 15.3662C14.2841 15.7748 14.8191 15.5629 15.004 14.6773L17.6491 2.21212C17.9199 1.12644 17.2349 0.634171 16.5258 0.956163"></path></svg></a>
+</p>
+    </div>
+
+
+
+
+
+
+    <hr class="gsc-border">
+    <div id="gsi-chapter-prev-next" class="flex flex-row mt-4">
+        <div id="gsi-chapter-prev" class="basis-1/2 mr-2 text-left">
+
+            <a href="/yourdailyshells.com/books/gitsite-guide/introduction/index.html"
+                onclick="gs_load_chapter('/books/gitsite-guide/introduction/index.html',true);return false;"
+                class="inline-block my-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>
+                GitSite Introduction
+            </a>
+
+        </div>
+        <div id="gsi-chapter-next" class="basis-1/2 ml-2 text-right">
+
+            <a href="/yourdailyshells.com/books/gitsite-guide/organizing/index.html"
+                onclick="gs_load_chapter('/books/gitsite-guide/organizing/index.html',true);return false;"
+                class="inline-block my-2">
+                Organizing Your Contents
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                </svg>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- waline comment -->
+
+<!-- 引入样式 -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+
+<!-- 评论容器 -->
+<div id="comment-thread">
+  <div class="comment-loading" style="display:none">Loading...</div>
+  <div class="comment-info-loaded" style="display:none">
+    <span class="comment-signin-state" style="display:none">
+      Signed in as <span class="comment-user-name"></span>
+      <a href="#0" onclick="gitsite_comment.signout()">Sign out</a>
+    </span>
+    <span class="comment-signout-state" style="display:none">
+      <a href="#0" onclick="gitsite_comment.signin()">Sign in</a> to comment
+    </span>
+  </div>
+  <div class="comment-info-failed" style="display:none">
+    Failed to load comments. Please try again later.
+  </div>
+  <div class="comment-topics"></div>
+  <div id="waline"></div>
+</div>
+
+<!-- 初始化脚本 -->
+<script type="module">
+  import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+  
+  // 调试信息
+  console.log('Waline初始化开始');
+  console.log('当前路径:', location.pathname);
+  console.log('服务端地址:', "https://blogs-db-comments.vercel.app/");
+  
+  init({
+    el: "#waline",
+    serverURL: "https://blogs-db-comments.vercel.app/",
+    path: location.pathname,
+    dark: "auto",
+    placeholder: "说点什么吧...",
+    emoji: ["https://unpkg.com/@waline/emojis@1.1.0/weibo", "https://unpkg.com/@waline/emojis@1.1.0/bilibili"],
+    login: "enable",
+    notification: true,
+    wordLimit: 1000,
+    ipLimit: true,
+    jwt: true,
+    // 添加更多调试选项
+    debug: true
+  }).then(() => {
+    console.log('Waline初始化成功');
+  }).catch((error) => {
+    console.error('Waline初始化失败:', error);
+  });
+</script>
+
+<style>
+  /* 保持原有样式 */
+  #comment-thread {
+    margin-top: 2rem;
+  }
+  
+  .comment-loading,
+  .comment-info-loaded,
+  .comment-info-failed {
+    margin-bottom: 1rem;
+  }
+  
+  /* Waline样式调整 */
+  .waline-container {
+    margin-top: 1rem;
+  }
+</style>
+
+<!--// waline comment --> 
+
+<!--// book content -->
